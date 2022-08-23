@@ -12,6 +12,7 @@ class ProcessServerElements {
     private $uri;
     private $variables;
     private $verb;
+    private $route;
 
     private function __construct(){
         //SINGLETON        
@@ -73,5 +74,13 @@ class ProcessServerElements {
 
     public function getVerb(){
         return $this->verb;
+    } 
+    
+    public function setRoute($route){
+        $this->route = $route;
+    }
+
+    public function getRoute(){
+        return $this->route;
     }    
 }
