@@ -2,6 +2,9 @@
 
 $mainPosition = __DIR__;//posição diretorio/repositorio
 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
+
 require_once("{$mainPosition}\helper\helper.php");
 require_once("{$mainPosition}\\vendor\autoload.php"); //sistema inclusão classe
 
