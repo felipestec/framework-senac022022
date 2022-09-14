@@ -19,6 +19,7 @@ class FactoryProcessServerElement extends AbstractFactoryMethods {
     }
 
     public function operation() {
+        dd($_SERVER);
         //Vamos fazer mais codigo aqui
         $this->processServerElements->setDocumentRoot($_SERVER['DOCUMENT_ROOT']);
         $this->processServerElements->setServerName($_SERVER['SERVER_NAME']);
