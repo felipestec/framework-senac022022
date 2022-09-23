@@ -14,3 +14,5 @@ INSERT INTO user (name,last_name) VALUES
 ('Jon', 'San'),
 ('Joao', 'Silva'),
 ('Pedro', 'de Lima');
+
+select * from user;
