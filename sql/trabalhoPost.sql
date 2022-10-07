@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS trabalhoPost;
-CREATE DATABASE trabalhoPost;
-USE trabalhoPost;
+DROP DATABASE IF EXISTS frameworksenac;
+CREATE DATABASE frameworksenac;
+USE frameworksenac;
 
 
 CREATE TABLE IF NOT EXISTS car(
@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS car(
 );
 
 /*INSERT INTO car (carName,model) VALUES
-('Civic', 'Honda');*/
+('Civic', 'Honda');
 
 
-select * from car;
+select * from car;*/
