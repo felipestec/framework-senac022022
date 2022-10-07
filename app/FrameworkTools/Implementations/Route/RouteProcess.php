@@ -7,46 +7,54 @@ use App\Controllers\HelloWorldController;
 use App\Controllers\InsertDataController;
 use APP\Controllers\InsertDataControllerPost;
 
+use App\FrameworkTools\Implementation\Route\Get;
+use App\FrameworkTools\Implementation\Route\Post;
 
-class RouteProcess{
 
-    public static function execute(){
+class RouteProcess {
 
-        $processServerElements = ProcessServerElements::start();
+    private static $processServerElements;
+
+    public static function execute() {
+        self::$processServerElements = ProcessServerElements::start();
         $routeArray = [];
 
-        switch ($processServerElements->getVerb()){
-
+        switch (self::$processServerElements->getVerb()) {
             case 'GET':
-
-                switch($processServerElements->getRoute()){
-                    //dd([$processServerElements->getVerb()]);
-
-                    case '/hello-world':
-                        return (new HelloWorldController)->execute();
-                    break;
-                }
-            break;    
-
+                return self::get();
             case 'POST':
-
-                switch($processServerElements->getRoute()){
-                        //dd([$processServerElements->getVerb()]);
-    
-                    case '/insert-data':
-                        return (new InsertDataController )->exec();
-                    break;
-
-                    case '/carinsert':
-                        return (new InsertDataControllerPost)->exec();
-                    break;               
-                    
-
-                }
-            break;   
-            }
-
-        //dd([$getRoutes]);
+                return self::post();
+        }
     }
 
+    private static function get() {
+        switch (self::$processServerElements->getRoute()) {
+
+            case '/hello-world':
+                return (new HelloWorldController)->execute();
+            break;
+
+            case '/train-query':
+                return (new TrainQueryController)->execute();
+            break;
+
+           
+        }
+                
+    }
+            
+
+    private static function post() {
+        switch (self::$processServerElements->getRoute()) {
+            case '/insert-data':
+                return (new InsertDataController)->exec();
+            break;
+
+            case '/carinsert':
+                return (new InsertDataControllerTrab)->exec();
+            break;
+        }
+                
+    }
+            
 }
