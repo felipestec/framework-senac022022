@@ -1,8 +1,13 @@
 <?php
 
-namespace App\FrameworkTools\Implementation\Route;
+namespace App\FrameworkTools\Implementations\Route;
 
-trait Post{
+use App\Controllers\InsertDataController;
+use App\Controllers\InsertDataControllerPost;
+
+
+
+trait Post {
     private static function post() {
         switch (self::$processServerElements->getRoute()) {
             case '/insert-data':
@@ -10,8 +15,8 @@ trait Post{
             break;
 
             case '/carinsert':
-                return (new InsertDataControllerTrab)->exec();
-            break;
+                return (new InsertDataControllerPost)->exec();
+            break; 
         }
                 
     }

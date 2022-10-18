@@ -1,6 +1,8 @@
 <?php
 
-namespace App\FrameworkTools\Implementation\Route;
+namespace App\FrameworkTools\Implementations\Route;
+
+use App\Controllers\HelloWorldController;
 use App\Controllers\InsertDataController;
 
 trait Get{

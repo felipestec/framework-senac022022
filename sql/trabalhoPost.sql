@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS frameworksenac;
-CREATE DATABASE frameworksenac;
-USE frameworksenac;
+DROP DATABASE IF EXISTS trabalhoPost;
+CREATE DATABASE trabalhoPost;
+USE trabalhoPost;
 
 
 CREATE TABLE IF NOT EXISTS car(
